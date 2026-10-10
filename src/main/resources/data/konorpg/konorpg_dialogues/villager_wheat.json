@@ -1,0 +1,110 @@
+{
+ "speaker": "Padeiro",
+ "start": "greet",
+ "starts": [
+  {
+   "require": {
+    "quest_ready": "fav_wheat"
+   },
+   "node": "deliver"
+  },
+  {
+   "require": {
+    "quest_active": "fav_wheat"
+   },
+   "node": "waiting"
+  }
+ ],
+ "nodes": {
+  "greet": {
+   "text": [
+    "Cheirinho de pão, né?",
+    "Bom dia, bom dia!"
+   ],
+   "choices": [
+    {
+     "text": "Posso ajudar com alguma coisa?",
+     "next": "offer"
+    },
+    {
+     "text": "Conversar",
+     "next": "chat"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "offer": {
+   "text": "Meu estoque de trigo acabou. Traga 6 trigos e eu lhe pago bem!",
+   "choices": [
+    {
+     "text": "Claro, eu busco!",
+     "next": "",
+     "effects": [
+      {
+       "type": "start_quest",
+       "id": "fav_wheat"
+      },
+      {
+       "type": "msg",
+       "text": "Favor aceito! (Entregue falando com a pessoa de novo.)"
+      }
+     ]
+    },
+    {
+     "text": "Agora não.",
+     "next": ""
+    }
+   ]
+  },
+  "waiting": {
+   "text": "Ainda aguardo o trigo. Sem trigo, sem pão.",
+   "choices": [
+    {
+     "text": "Já volto.",
+     "next": ""
+    }
+   ]
+  },
+  "deliver": {
+   "text": "Você trouxe! Muito obrigado, aventureiro.",
+   "choices": [
+    {
+     "text": "Entregar",
+     "next": "thanks",
+     "effects": [
+      {
+       "type": "claim_quest",
+       "id": "fav_wheat"
+      }
+     ]
+    }
+   ]
+  },
+  "thanks": {
+   "text": "Pão fresquinho amanhã, graças a você!",
+   "choices": [
+    {
+     "text": "De nada!",
+     "next": ""
+    }
+   ]
+  },
+  "chat": {
+   "text": [
+    "Axel é pacata... exceto quando uma certa deusa aparece.",
+    "Os monstros lá fora não param de aparecer. Ainda bem que temos a Guilda.",
+    "Dizem que a Guilda tem um mural novo toda hora.",
+    "Ouvi falar de outras cidades além das colinas. Um dia eu vou lá!"
+   ],
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "greet"
+    }
+   ]
+  }
+ }
+}

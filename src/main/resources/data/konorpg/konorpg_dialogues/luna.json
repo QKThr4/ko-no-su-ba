@@ -1,0 +1,137 @@
+{
+ "speaker": "Luna",
+ "start": "back",
+ "starts": [
+  {
+   "require": {
+    "registered": false
+   },
+   "node": "new"
+  }
+ ],
+ "nodes": {
+  "new": {
+   "text": "Bem-vindo à Guilda dos Aventureiros! Para se registrar, a taxa de inscrição é de {fee} Eris. Você tem {money} Eris.",
+   "choices": [
+    {
+     "text": "Quero me registrar.",
+     "next": "done",
+     "effects": [
+      {
+       "type": "action",
+       "action": "register"
+      }
+     ],
+     "next_fail": "poor"
+    },
+    {
+     "text": "Só estou olhando.",
+     "next": ""
+    }
+   ]
+  },
+  "done": {
+   "text": "Pronto! Aqui está o seu Cartão de Aventureiro. Abra o painel (tecla K) > GUILDA para escolher a classe e vá ao mural de quests!",
+   "choices": [
+    {
+     "text": "Obrigado!",
+     "next": ""
+    }
+   ]
+  },
+  "poor": {
+   "text": "Hmm... a taxa é {fee} Eris e você tem só {money}. Aventureiros sem dinheiro? Comum por aqui. Volte quando tiver.",
+   "choices": [
+    {
+     "text": "Entendi.",
+     "next": ""
+    }
+   ]
+  },
+  "back": {
+   "text": [
+    "Olá, {player}! Rank {rank}, nível {level}. Como posso ajudar?",
+    "Bem-vindo de volta! Algum monstro precisando de uma lição?",
+    "Que bom ver você inteiro! A Guilda agradece."
+   ],
+   "choices": [
+    {
+     "text": "Entregar quests concluídas (receber recompensas)",
+     "next": "paid",
+     "effects": [
+      {
+       "type": "action",
+       "action": "claim_board"
+      }
+     ],
+     "next_fail": "nothing"
+    },
+    {
+     "text": "Abrir o painel da Guilda (classe, cartão)",
+     "next": "",
+     "effects": [
+      {
+       "type": "action",
+       "action": "open_guild"
+      }
+     ]
+    },
+    {
+     "text": "Como funcionam as quests?",
+     "next": "howto"
+    },
+    {
+     "text": "Dicas de aventureiro",
+     "next": "tips"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "paid": {
+   "text": [
+    "Excelente trabalho! A Guilda agradece e a recompensa já está com você.",
+    "Missão cumprida! Seu rank vai agradecer."
+   ],
+   "choices": [
+    {
+     "text": "Obrigado!",
+     "next": ""
+    },
+    {
+     "text": "Mais alguma coisa?",
+     "next": "back"
+    }
+   ]
+  },
+  "nothing": {
+   "text": "Hmm, você não tem nenhuma quest concluída no momento. Aceite quests no mural e volte quando terminar!",
+   "choices": [
+    {
+     "text": "Entendi.",
+     "next": "back"
+    }
+   ]
+  },
+  "howto": {
+   "text": "Quests ficam no MURAL (praça e aqui dentro). Você aceita lá, cumpre o objetivo e vem falar comigo para receber XP, Eris e reputação. O mural muda com o tempo e algumas quests têm recarga.",
+   "choices": [
+    {
+     "text": "Entendi!",
+     "next": "back"
+    }
+   ]
+  },
+  "tips": {
+   "text": "Dicas: monstros dão XP e Eris. Itens deles valem dinheiro nas lojas. Alimente seus companheiros de tempos em tempos. E nunca, NUNCA deixe a deusa beber antes de uma luta.",
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "back"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "Trigo para o Padeiro",
+ "description": "Traga 6 trigos.",
+ "type": "collect",
+ "amount": 6,
+ "xp": 25,
+ "money": 70,
+ "difficulty": 1,
+ "minRank": "F",
+ "category": "favor",
+ "repeatable": true,
+ "location": "Cidade de Axel",
+ "target": "minecraft:wheat",
+ "cooldownMinutes": 30,
+ "humor": "",
+ "reputation": {
+  "city": 1
+ }
+}

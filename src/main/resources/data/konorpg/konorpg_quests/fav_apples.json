@@ -1,0 +1,19 @@
+{
+ "name": "Maçãs para a Torta",
+ "description": "Traga 3 maçãs.",
+ "type": "collect",
+ "amount": 3,
+ "xp": 25,
+ "money": 80,
+ "difficulty": 1,
+ "minRank": "F",
+ "category": "favor",
+ "repeatable": true,
+ "location": "Cidade de Axel",
+ "target": "minecraft:apple",
+ "cooldownMinutes": 30,
+ "humor": "",
+ "reputation": {
+  "city": 1
+ }
+}

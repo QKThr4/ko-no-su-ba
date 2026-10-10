@@ -1,0 +1,165 @@
+{
+ "speaker": "Aqua",
+ "start": "talk",
+ "nodes": {
+  "talk": {
+   "text": [
+    "Sim? Fale com a deusa. Rápido, estou ocupada. (Não estou.)",
+    "Oi! Veio me pagar uma bebida? Não? Que droga.",
+    "Pode falar, humilde aventureiro."
+   ],
+   "choices": [
+    {
+     "text": "Aqua, me cure!",
+     "next": "healed",
+     "effects": [
+      {
+       "type": "action",
+       "action": "companion_heal"
+      },
+      {
+       "type": "friendship",
+       "id": "aqua",
+       "amount": 1
+      }
+     ],
+     "next_fail": "talk"
+    },
+    {
+     "text": "Toma, comida! (alimentar com o item da mão)",
+     "next": "fed",
+     "effects": [
+      {
+       "type": "action",
+       "action": "companion_feed"
+      }
+     ],
+     "next_fail": "talk"
+    },
+    {
+     "text": "Como você está?",
+     "next": "how"
+    },
+    {
+     "text": "Me fale da Ordem Axis.",
+     "next": "axis",
+     "require": {
+      "friendship": {
+       "id": "aqua",
+       "min": 2
+      }
+     }
+    },
+    {
+     "text": "Conte uma história de deusa.",
+     "next": "story",
+     "require": {
+      "friendship": {
+       "id": "aqua",
+       "min": 3
+      }
+     }
+    },
+    {
+     "text": "Fique aqui / Siga-me",
+     "next": "",
+     "effects": [
+      {
+       "type": "action",
+       "action": "companion_stay"
+      }
+     ]
+    },
+    {
+     "text": "Preciso que você vá embora.",
+     "next": "refuse"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "healed": {
+   "text": "Heal! Pode agradecer depois. (Eu só consigo fazer isso de tempos em tempos, tá? Sou uma deusa, não uma fonte.)",
+   "choices": [
+    {
+     "text": "Valeu, Aqua.",
+     "next": "talk"
+    }
+   ]
+  },
+  "fed": {
+   "text": [
+    "Hmm! Isso estava ótimo! Você realmente sabe cuidar de uma deusa.",
+    "Nham nham... se tiver sake, eu aceito também!"
+   ],
+   "choices": [
+    {
+     "text": "De nada.",
+     "next": "talk"
+    }
+   ]
+  },
+  "how": {
+   "text": [
+    "Eu? Maravilhosa, claro! Só estou com sede... e com fome... e com saudade do céu.",
+    "Estou ótima! Mas se aparecer um sapo gigante, eu me escondo atrás de você. Combinado?"
+   ],
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "talk"
+    }
+   ]
+  },
+  "axis": {
+   "text": "A Ordem Axis me adora! É a maior religião do mundo... ou será que é a pior reputação do mundo? Ninguém sabe. Mas eles me dão presentes, às vezes.",
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "talk",
+     "effects": [
+      {
+       "type": "rep",
+       "faction": "axis",
+       "amount": 1
+      }
+     ]
+    }
+   ]
+  },
+  "story": {
+   "text": "Uma vez eu purifiquei um lago inteiro. Ficou tão limpo que os peixes foram embora. Dizem que é o meu poder... eu digo que foi uma vitória.",
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "talk",
+     "effects": [
+      {
+       "type": "friendship",
+       "id": "aqua",
+       "amount": 1
+      }
+     ]
+    }
+   ]
+  },
+  "refuse": {
+   "text": "Como é?! Eu sou uma DEUSA! Não vou a lugar nenhum! Você me trouxe para este mundo, agora aguenta!",
+   "choices": [
+    {
+     "text": "Desculpe...",
+     "next": "talk",
+     "effects": [
+      {
+       "type": "friendship",
+       "id": "aqua",
+       "amount": -1
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

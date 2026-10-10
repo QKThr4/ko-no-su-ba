@@ -1,0 +1,47 @@
+{
+ "speaker": "Lojista",
+ "start": "greet",
+ "nodes": {
+  "greet": {
+   "text": [
+    "Bem-vindo! Veja minhas mercadorias.",
+    "Olá, aventureiro! Eris na mão, itens no inventário.",
+    "Hoje o estoque mudou! Dê uma olhada."
+   ],
+   "choices": [
+    {
+     "text": "Ver a loja",
+     "next": "",
+     "effects": [
+      {
+       "type": "action",
+       "action": "open_shop"
+      }
+     ]
+    },
+    {
+     "text": "Alguma novidade?",
+     "next": "news"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "news": {
+   "text": [
+    "Dizem que sapos gigantes andam engolindo aventureiros nas planícies. Principalmente os que ficam gritando.",
+    "Cuidado com os goblins à noite. E com deusas bêbadas, a qualquer hora.",
+    "Reputação com os comerciantes dá desconto, sabia? Vendendo itens de monstro você ganha a nossa confiança.",
+    "Meu estoque muda todo dia. Quem chega cedo leva os melhores itens."
+   ],
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "greet"
+    }
+   ]
+  }
+ }
+}

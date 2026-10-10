@@ -1,0 +1,19 @@
+{
+ "name": "Um Sake da Ordem Axis",
+ "description": "Traga 1 garrafa de Sake da Ordem Axis (taverna).",
+ "type": "collect",
+ "amount": 1,
+ "xp": 25,
+ "money": 150,
+ "difficulty": 1,
+ "minRank": "F",
+ "category": "favor",
+ "repeatable": true,
+ "location": "Cidade de Axel",
+ "target": "konorpg:sake_bottle",
+ "cooldownMinutes": 30,
+ "humor": "Dizem que é \"para fins religiosos\".",
+ "reputation": {
+  "city": 1
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "name": "Flores para a Floricultura",
+ "description": "Traga 3 papoulas (flores vermelhas) para o morador.",
+ "type": "collect",
+ "amount": 3,
+ "xp": 25,
+ "money": 60,
+ "difficulty": 1,
+ "minRank": "F",
+ "category": "favor",
+ "repeatable": true,
+ "location": "Cidade de Axel",
+ "target": "minecraft:poppy",
+ "cooldownMinutes": 30,
+ "humor": "Ele jura que é para \"decoração\".",
+ "reputation": {
+  "city": 1
+ }
+}

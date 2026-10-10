@@ -1,0 +1,19 @@
+{
+ "name": "Gravetos para a Lareira",
+ "description": "Traga 8 gravetos.",
+ "type": "collect",
+ "amount": 8,
+ "xp": 25,
+ "money": 40,
+ "difficulty": 1,
+ "minRank": "F",
+ "category": "favor",
+ "repeatable": true,
+ "location": "Cidade de Axel",
+ "target": "minecraft:stick",
+ "cooldownMinutes": 30,
+ "humor": "",
+ "reputation": {
+  "city": 1
+ }
+}

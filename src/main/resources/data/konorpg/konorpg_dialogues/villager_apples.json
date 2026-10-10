@@ -1,0 +1,110 @@
+{
+ "speaker": "Moradora",
+ "start": "greet",
+ "starts": [
+  {
+   "require": {
+    "quest_ready": "fav_apples"
+   },
+   "node": "deliver"
+  },
+  {
+   "require": {
+    "quest_active": "fav_apples"
+   },
+   "node": "waiting"
+  }
+ ],
+ "nodes": {
+  "greet": {
+   "text": [
+    "Oi! Você parece faminto.",
+    "Olá! Já provou a torta da taverna?"
+   ],
+   "choices": [
+    {
+     "text": "Posso ajudar com alguma coisa?",
+     "next": "offer"
+    },
+    {
+     "text": "Conversar",
+     "next": "chat"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "offer": {
+   "text": "Vou fazer uma torta, mas faltam 3 maçãs. Pode buscar?",
+   "choices": [
+    {
+     "text": "Claro, eu busco!",
+     "next": "",
+     "effects": [
+      {
+       "type": "start_quest",
+       "id": "fav_apples"
+      },
+      {
+       "type": "msg",
+       "text": "Favor aceito! (Entregue falando com a pessoa de novo.)"
+      }
+     ]
+    },
+    {
+     "text": "Agora não.",
+     "next": ""
+    }
+   ]
+  },
+  "waiting": {
+   "text": "As maçãs... as macieiras ficam fora dos muros!",
+   "choices": [
+    {
+     "text": "Já volto.",
+     "next": ""
+    }
+   ]
+  },
+  "deliver": {
+   "text": "Você trouxe! Muito obrigado, aventureiro.",
+   "choices": [
+    {
+     "text": "Entregar",
+     "next": "thanks",
+     "effects": [
+      {
+       "type": "claim_quest",
+       "id": "fav_apples"
+      }
+     ]
+    }
+   ]
+  },
+  "thanks": {
+   "text": "Que torta vai ficar! Quer um pedaço? Não? Então toma isto.",
+   "choices": [
+    {
+     "text": "De nada!",
+     "next": ""
+    }
+   ]
+  },
+  "chat": {
+   "text": [
+    "Axel é pacata... exceto quando uma certa deusa aparece.",
+    "Os monstros lá fora não param de aparecer. Ainda bem que temos a Guilda.",
+    "Dizem que a Guilda tem um mural novo toda hora.",
+    "Ouvi falar de outras cidades além das colinas. Um dia eu vou lá!"
+   ],
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "greet"
+    }
+   ]
+  }
+ }
+}

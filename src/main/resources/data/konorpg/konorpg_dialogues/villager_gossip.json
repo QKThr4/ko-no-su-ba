@@ -1,0 +1,111 @@
+{
+ "speaker": "Morador",
+ "start": "greet",
+ "starts": [
+  {
+   "require": {
+    "quest_ready": "fav_cobble"
+   },
+   "node": "deliver"
+  },
+  {
+   "require": {
+    "quest_active": "fav_cobble"
+   },
+   "node": "waiting"
+  }
+ ],
+ "nodes": {
+  "greet": {
+   "text": [
+    "Já ouviu? Dizem que um goblin roubou uma galinha.",
+    "Cuidado com as planícies: sapos gigantes engolem gente.",
+    "Eu vi uma deusa chorando perto da fonte..."
+   ],
+   "choices": [
+    {
+     "text": "Posso ajudar com alguma coisa?",
+     "next": "offer"
+    },
+    {
+     "text": "Conversar",
+     "next": "chat"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "offer": {
+   "text": "O muro do meu quintal desabou. Consegue 16 pedregulhos?",
+   "choices": [
+    {
+     "text": "Claro, eu busco!",
+     "next": "",
+     "effects": [
+      {
+       "type": "start_quest",
+       "id": "fav_cobble"
+      },
+      {
+       "type": "msg",
+       "text": "Favor aceito! (Entregue falando com a pessoa de novo.)"
+      }
+     ]
+    },
+    {
+     "text": "Agora não.",
+     "next": ""
+    }
+   ]
+  },
+  "waiting": {
+   "text": "Ainda preciso dos 16 pedregulhos!",
+   "choices": [
+    {
+     "text": "Já volto.",
+     "next": ""
+    }
+   ]
+  },
+  "deliver": {
+   "text": "Você trouxe! Muito obrigado, aventureiro.",
+   "choices": [
+    {
+     "text": "Entregar",
+     "next": "thanks",
+     "effects": [
+      {
+       "type": "claim_quest",
+       "id": "fav_cobble"
+      }
+     ]
+    }
+   ]
+  },
+  "thanks": {
+   "text": "Meu muro vai ficar firme de novo!",
+   "choices": [
+    {
+     "text": "De nada!",
+     "next": ""
+    }
+   ]
+  },
+  "chat": {
+   "text": [
+    "Axel é pacata... exceto quando uma certa deusa aparece.",
+    "Os monstros lá fora não param de aparecer. Ainda bem que temos a Guilda.",
+    "Dizem que a Guilda tem um mural novo toda hora.",
+    "Ouvi falar de outras cidades além das colinas. Um dia eu vou lá!"
+   ],
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "greet"
+    }
+   ]
+  }
+ }
+}

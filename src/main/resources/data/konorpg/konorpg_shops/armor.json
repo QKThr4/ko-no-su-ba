@@ -1,0 +1,54 @@
+{
+ "name": "Armaduras da Greta",
+ "sell": true,
+ "buy": [
+  {
+   "item": "minecraft:leather_chestplate",
+   "price": 100
+  },
+  {
+   "item": "minecraft:shield",
+   "price": 220
+  },
+  {
+   "item": "minecraft:leather_helmet",
+   "price": 60,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:leather_leggings",
+   "price": 90,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:leather_boots",
+   "price": 50,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:chainmail_chestplate",
+   "price": 500,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:iron_helmet",
+   "price": 300,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:iron_chestplate",
+   "price": 600,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:iron_leggings",
+   "price": 500,
+   "rotate": true
+  },
+  {
+   "item": "minecraft:iron_boots",
+   "price": 280,
+   "rotate": true
+  }
+ ]
+}

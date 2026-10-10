@@ -1,0 +1,49 @@
+{
+ "speaker": "Guarda",
+ "start": "greet",
+ "nodes": {
+  "greet": {
+   "text": [
+    "Mantenha a ordem na cidade, aventureiro.",
+    "Axel é segura. Quase sempre. Não bata nos moradores.",
+    "Os monstros lá fora estão ficando mais ousados. Cuide-se.",
+    "Se ouvir gritos de deusa, o problema provavelmente é um sapo."
+   ],
+   "choices": [
+    {
+     "text": "Rumores?",
+     "next": "rumor"
+    },
+    {
+     "text": "Onde fica a Guilda?",
+     "next": "guild"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "rumor": {
+   "text": [
+    "Ultimamente, mortos-vivos têm surgido à noite. Um padre faria bem... ou uma deusa. Se ela estiver sóbria.",
+    "Falam de uma caverna de goblins além dos portões. (EM BREVE)"
+   ],
+   "choices": [
+    {
+     "text": "Entendi.",
+     "next": ""
+    }
+   ]
+  },
+  "guild": {
+   "text": "A Guilda é o prédio grande ao norte da praça. O mural de quests fica na praça e dentro dela.",
+   "choices": [
+    {
+     "text": "Obrigado!",
+     "next": ""
+    }
+   ]
+  }
+ }
+}

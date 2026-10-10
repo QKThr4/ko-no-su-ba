@@ -1,0 +1,19 @@
+{
+ "name": "Pedras para o Muro",
+ "description": "Traga 16 pedregulhos.",
+ "type": "collect",
+ "amount": 16,
+ "xp": 25,
+ "money": 90,
+ "difficulty": 1,
+ "minRank": "F",
+ "category": "favor",
+ "repeatable": true,
+ "location": "Cidade de Axel",
+ "target": "minecraft:cobblestone",
+ "cooldownMinutes": 30,
+ "humor": "",
+ "reputation": {
+  "city": 1
+ }
+}

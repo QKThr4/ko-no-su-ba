@@ -1,0 +1,110 @@
+{
+ "speaker": "Morador",
+ "start": "greet",
+ "starts": [
+  {
+   "require": {
+    "quest_ready": "fav_sake"
+   },
+   "node": "deliver"
+  },
+  {
+   "require": {
+    "quest_active": "fav_sake"
+   },
+   "node": "waiting"
+  }
+ ],
+ "nodes": {
+  "greet": {
+   "text": [
+    "Psiu, você aí.",
+    "Ei, forasteiro..."
+   ],
+   "choices": [
+    {
+     "text": "Posso ajudar com alguma coisa?",
+     "next": "offer"
+    },
+    {
+     "text": "Conversar",
+     "next": "chat"
+    },
+    {
+     "text": "Tchau.",
+     "next": ""
+    }
+   ]
+  },
+  "offer": {
+   "text": "Psiu... conseguiria um Sake da Ordem Axis para mim? Está na taverna. É para uma... cerimônia.",
+   "choices": [
+    {
+     "text": "Claro, eu busco!",
+     "next": "",
+     "effects": [
+      {
+       "type": "start_quest",
+       "id": "fav_sake"
+      },
+      {
+       "type": "msg",
+       "text": "Favor aceito! (Entregue falando com a pessoa de novo.)"
+      }
+     ]
+    },
+    {
+     "text": "Agora não.",
+     "next": ""
+    }
+   ]
+  },
+  "waiting": {
+   "text": "O sake! Já estou com sede... quer dizer, com fé.",
+   "choices": [
+    {
+     "text": "Já volto.",
+     "next": ""
+    }
+   ]
+  },
+  "deliver": {
+   "text": "Você trouxe! Muito obrigado, aventureiro.",
+   "choices": [
+    {
+     "text": "Entregar",
+     "next": "thanks",
+     "effects": [
+      {
+       "type": "claim_quest",
+       "id": "fav_sake"
+      }
+     ]
+    }
+   ]
+  },
+  "thanks": {
+   "text": "Glub glub... digo, abençoado seja!",
+   "choices": [
+    {
+     "text": "De nada!",
+     "next": ""
+    }
+   ]
+  },
+  "chat": {
+   "text": [
+    "Axel é pacata... exceto quando uma certa deusa aparece.",
+    "Os monstros lá fora não param de aparecer. Ainda bem que temos a Guilda.",
+    "Dizem que a Guilda tem um mural novo toda hora.",
+    "Ouvi falar de outras cidades além das colinas. Um dia eu vou lá!"
+   ],
+   "choices": [
+    {
+     "text": "Voltar",
+     "next": "greet"
+    }
+   ]
+  }
+ }
+}
